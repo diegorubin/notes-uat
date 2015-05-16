@@ -1,15 +1,15 @@
 {
   "type": "object",
   "required" : [
+    "_id",
     "title",
-    "directory",
     "path",
-    "folderId"
+    "body"
   ],
   "properties" : {
+    "_id" : { "type" : "string" },
     "title" : { "type" : "string" },
-    "directory" : { "type" : "boolean" },
     "path" : { "type" : "string" },
-    "folderId" : { "type" : "integer" }
+    "body" : { "type" : "string" }
   }
 }

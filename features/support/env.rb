@@ -4,9 +4,14 @@ require 'selenium-webdriver'
 require 'yaml'
 require 'httparty'
 require 'pry'
+require 'pry-byebug'
 require 'json'
-require 'jsonpath'
-require_relative 'lib/serializer/utilities'
+require 'json-schema'
+
+Dir.entries('features/support/repository').each do |entry|
+  next if entry =~ /\.\.?/
+  require_relative "features/support/repository/#{entry}"
+end
 
 YAML::ENGINE.yamler= 'syck'
 

@@ -16,6 +16,7 @@ gem 'httparty','~>0.11.0'
 gem 'settingslogic', '2.0.9'
 
 gem 'pry' 
+gem 'pry-byebug' 
 gem 'guard'
 gem 'guard-cucumber'
 
