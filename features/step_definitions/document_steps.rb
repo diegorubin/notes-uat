@@ -14,7 +14,14 @@ Then(/^response should contains a new id$/) do
   expect(@response).to match_response_schema(:document)
 end
 
-Then(/^status should be "(.*?)"$/) do |arg1|
-  expect(@response.code).to eql(201)
+Then(/^response should contains a list of documents$/) do
+  @response = HTTParty.get(@api_url, 
+    headers: { 'Content-Type' => 'application/json' }
+  )
+  expect(@response).to match_response_list(:document)
+end
+
+Then(/^status should be "(.*?)"$/) do |code|
+  expect(@response.code).to eql(code.to_i)
 end
 
