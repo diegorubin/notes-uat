@@ -3,22 +3,22 @@ When(/^I use "(.*?)" API$/) do |url|
 end
 
 When(/^send valid attributes$/) do
-  @document = Document.new
+  @note = Note.new
 end
 
 Then(/^response should contains a new id$/) do
   @response = HTTParty.post(@api_url, 
-    body: @document.to_json, 
+    body: @note.to_json, 
     headers: { 'Content-Type' => 'application/json' }
   )
-  expect(@response).to match_response_schema(:document)
+  expect(@response).to match_response_schema(:note)
 end
 
-Then(/^response should contains a list of documents$/) do
+Then(/^response should contains a list of notes$/) do
   @response = HTTParty.get(@api_url, 
     headers: { 'Content-Type' => 'application/json' }
   )
-  expect(@response).to match_response_list(:document)
+  expect(@response).to match_response_list(:note)
 end
 
 Then(/^status should be "(.*?)"$/) do |code|

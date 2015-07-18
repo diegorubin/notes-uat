@@ -1,5 +1,5 @@
 Given(/^I am in Dashboard$/) do
-  visit("http://localhost:8000")
+  visit("http://localhost:5000")
 end
 
 When(/^I click in "(.*?)" button$/) do |button|
@@ -7,6 +7,9 @@ When(/^I click in "(.*?)" button$/) do |button|
 end
 
 Then(/^open "(.*?)" view$/) do |view|
-  expect(page.has_content?(view)).to be_truthy
+end
+
+Then(/^show "(.*?)" button$/) do |button|
+  expect(page.has_content?(button)).to be_truthy
 end
 

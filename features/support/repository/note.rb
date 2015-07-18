@@ -1,7 +1,7 @@
-class Document < Base
+class Note < Base
 
   default_attributes({ 
-    'title' => "test document #{rand(99999)}", 'path' => '/',
+    'title' => "test note #{rand(99999)}", 'path' => '/',
     'body' => %q{
       a little
       text

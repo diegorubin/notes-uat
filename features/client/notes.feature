@@ -1,8 +1,9 @@
-Feature: Documents Dashboard
+Feature: Notes Dashboard
   Background:
     Given I am in Dashboard
 
-  Scenario: Open new document dialog
+  Scenario: Open new note dialog
     When I click in "Nova Nota" button
-    Then open "Edição de Nota" view
+    Then show "Cancelar" button
+    And show "Concluir" button
 
